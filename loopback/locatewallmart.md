@@ -30,3 +30,5 @@ slc loopback:datasource mymongo
 npm install
 
 mongoimport --jsonArray -d locatewallmart -c store --type json --file walmart.json -h localhost --port 27017 
+
+slc loopback:model

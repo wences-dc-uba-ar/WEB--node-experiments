@@ -6,7 +6,7 @@
   "mymongo": {
     "host": "localhost",
     "port": 27017,
-    "url": "mongodb://localhost:27017/locatewalmart",
+    "url": "mongodb://localhost:27017/locatewallmart",
     "database": "locatewallmart",
     "password": "qubit",
     "name": "mymongo",
