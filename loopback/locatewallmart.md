@@ -28,3 +28,5 @@ slc loopback:datasource mymongo
 # https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 
 npm install
+
+mongoimport --jsonArray -d locatewallmart -c store --type json --file walmart.json -h localhost --port 27017 
