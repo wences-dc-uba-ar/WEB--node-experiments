@@ -12,5 +12,15 @@
     "name": "mymongo",
     "user": "qubit",
     "connector": "mongodb"
+  },
+  "mydb": {
+    "host": "",
+    "port": 0,
+    "url": "mysql://qubit:qubit@localhost/localwalmart",
+    "database": "",
+    "password": "",
+    "name": "mydb",
+    "user": "",
+    "connector": "mysql"
   }
 }
