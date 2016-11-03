@@ -35,5 +35,9 @@
   "Content": {
     "dataSource": "bpm",
     "public": true
+  },
+  "Taxonomy": {
+    "dataSource": "bpm",
+    "public": true
   }
 }
