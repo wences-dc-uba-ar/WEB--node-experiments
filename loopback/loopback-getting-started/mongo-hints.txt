@@ -1,0 +1,18 @@
+https://docs.mongodb.com/manual/mongo/
+
+$ mongo
+
+> db
+test
+
+>show dbs
+admin           0.000GB
+local           0.000GB
+locatewallmart  0.000GB
+
+> use myNewDatabase
+> db.myCollection.insert( { x: 1 } );
+> db.myCollection.insert( { y: 2 } );
+> db.myCollection.find().pretty()
+{ "_id" : ObjectId("581fbc9b6ba195a35337e3da"), "x" : 1 }
+{ "_id" : ObjectId("581fbe786ba195a35337e3db"), "y" : 2 }
