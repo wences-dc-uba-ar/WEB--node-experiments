@@ -8,6 +8,11 @@
 	mysqldump -ubpm -pbpm --complete-insert --skip-extended-insert --skip-dump-date --routines bpm >bpm.sql
 
 # commit for the record
+
 	git add bpm.sql
 	git add bpm.log
 	git commit -m "added empty db dump"
+
+# sync model->DB and dump again
+
+	mysqldump -ubpm -pbpm --complete-insert --skip-extended-insert --skip-dump-date --routines bpm >bpm.sql
