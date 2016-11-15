@@ -2,8 +2,13 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var path = require('path');
 
 var app = module.exports = loopback();
+app.set('view engine', 'ejs'); // LoopBack comes with EJS out-of-box
+app.set('json spaces', 2); // format json responses for easier viewing
+
+app.set('views', path.resolve(__dirname, 'views'));
 
 app.start = function() {
   // start the web server
