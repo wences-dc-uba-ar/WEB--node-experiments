@@ -33,31 +33,31 @@
     "public": false
   },
   "Customer": {
-    "dataSource": "lbapiDs",
+    "dataSource": "db",
     "public": true
   },
   "Order": {
-    "dataSource": "lbapiDs",
+    "dataSource": "db",
     "public": true
   },
   "Account": {
-    "dataSource": "lbapiDs",
-    "public": true
+    "dataSource": "db",
+    "public": false
   },
   "Address": {
-    "dataSource": "lbapiDs",
-    "public": true
+    "dataSource": "transient",
+    "public": false
   },
   "Author": {
-    "dataSource": "lbapiDs",
+    "dataSource": "db",
     "public": false
   },
   "Book": {
-    "dataSource": "lbapiDs",
+    "dataSource": "db",
     "public": true
   },
   "EmailAddress": {
-    "dataSource": "lbapiDs",
+    "dataSource": "transient",
     "public": false
   },
   "Link": {
