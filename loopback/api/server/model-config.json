@@ -31,5 +31,33 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Customer": {
+    "dataSource": "lbapiDs",
+    "public": true
+  },
+  "Order": {
+    "dataSource": "lbapiDs",
+    "public": true
+  },
+  "Account": {
+    "dataSource": "lbapiDs",
+    "public": true
+  },
+  "Address": {
+    "dataSource": "lbapiDs",
+    "public": true
+  },
+  "Author": {
+    "dataSource": "lbapiDs",
+    "public": false
+  },
+  "Book": {
+    "dataSource": "lbapiDs",
+    "public": true
+  },
+  "EmailAddress": {
+    "dataSource": "lbapiDs",
+    "public": false
   }
 }
