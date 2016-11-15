@@ -18,7 +18,20 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "linked": {
+      "type": "belongsTo",
+      "polymorphic": {
+        "idType": "number"
+      },
+      "properties": {
+        "name": "name"
+      },
+      "options": {
+        "invertProperties": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

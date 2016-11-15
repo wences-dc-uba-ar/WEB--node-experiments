@@ -11,7 +11,15 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "people": {
+      "type": "embedsMany",
+      "model": "Link",
+      "scope": {
+        "include": "linked"
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }
