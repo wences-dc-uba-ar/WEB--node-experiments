@@ -59,5 +59,13 @@
   "EmailAddress": {
     "dataSource": "lbapiDs",
     "public": false
+  },
+  "Link": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "Reader": {
+    "dataSource": "db",
+    "public": false
   }
 }
