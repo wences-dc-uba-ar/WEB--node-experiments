@@ -2,5 +2,14 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "lbapiDs": {
+    "host": "loclahost",
+    "port": 3306,
+    "database": "lbapi",
+    "password": "bpm",
+    "name": "lbapiDs",
+    "user": "bpm",
+    "connector": "mysql"
   }
 }
