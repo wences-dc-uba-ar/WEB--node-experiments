@@ -14,7 +14,8 @@ var ds = loopback.createDataSource('oracle', {
 
 var cb = function(err, data) {
   if (err) throw err;
-  console.log(data);
+  
+  console.log(JSON.stringify(data, null, '  '));
 }
 
 
@@ -70,4 +71,17 @@ var cb = function(err, data) {
   // { keySeq: 1, fkOwner: 'DEMO', pkOwner: 'DEMO', fkColumnName: 'PRODUCT_ID', pkColumnName: 'ID' pkName: 'SYS_C004891', pkTableName: 'PRODUCT', fkTableName: 'RESERVATION', fkName: 'RESERVATION_PRODUCT_FK' } ]
 
 'Create a model definition by discovering the given table'
-// ds.discoverSchema('PRODUCT', {owner: 'STRONGLOOP'}, cb);
+// ds.discoverSchema('PRODUCT', {owner: 'DEMO'}, cb);
+// { name: "Product",
+//   options: {
+//     idInjection: false,
+//     oracle: {schema: "DEMO", table: "PRODUCT"}},
+//   properties: {
+//     color:    { 	type: "String", length: 1024, scale: null, precision: null, required: false,		oracle: { dataScale: null, dataPrecision: null, nullable: "Y", dataLength: 1024, dataType: "VARCHAR2", columnName: "COLOR"}},
+//     carclass: { 	type: "String", length: 1024, scale: null, precision: null, required: false,		oracle: { dataScale: null, dataPrecision: null, nullable: "Y", dataLength: 1024, dataType: "VARCHAR2", columnName: "CARCLASS"}},
+//     image:    { 	type: "String", length: 1024, scale: null, precision: null, required: false,		oracle: { dataScale: null, dataPrecision: null, nullable: "Y", dataLength: 1024, dataType: "VARCHAR2", columnName: "IMAGE"}},
+//     model:    { 	type: "String", length: 1024, scale: null, precision: null, required: false,		oracle: { dataScale: null, dataPrecision: null, nullable: "Y", dataLength: 1024, dataType: "VARCHAR2", columnName: "MODEL"}},
+//     make:     { 	type: "String", length: 1024, scale: null, precision: null, required: false,		oracle: { dataScale: null, dataPrecision: null, nullable: "Y", dataLength: 1024, dataType: "VARCHAR2", columnName: "MAKE"}},
+//     year:     { 	type: "Number", length: 22,   scale: null, precision: null, required: false,		oracle: { dataScale: null, dataPrecision: null, nullable: "Y", dataLength: 22,   dataType: "NUMBER",   columnName: "YEAR"}},
+//     vin:      { 	type: "String", length: 1024, scale: null, precision: null, required: false,		oracle: { dataScale: null, dataPrecision: null, nullable: "Y", dataLength: 1024, dataType: "VARCHAR2", columnName: "VIN"}},
+//     id:       { 	type: "String", length: 20,   scale: null, precision: null, required: true,  id: 1, oracle: { dataScale: null, dataPrecision: null, nullable: "N", dataLength: 20,   dataType: "VARCHAR2", columnName: "ID"}}}}
