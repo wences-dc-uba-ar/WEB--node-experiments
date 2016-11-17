@@ -85,3 +85,5 @@ var cb = function(err, data) {
 //     year:     { 	type: "Number", length: 22,   scale: null, precision: null, required: false,		oracle: { dataScale: null, dataPrecision: null, nullable: "Y", dataLength: 22,   dataType: "NUMBER",   columnName: "YEAR"}},
 //     vin:      { 	type: "String", length: 1024, scale: null, precision: null, required: false,		oracle: { dataScale: null, dataPrecision: null, nullable: "Y", dataLength: 1024, dataType: "VARCHAR2", columnName: "VIN"}},
 //     id:       { 	type: "String", length: 20,   scale: null, precision: null, required: true,  id: 1, oracle: { dataScale: null, dataPrecision: null, nullable: "N", dataLength: 20,   dataType: "VARCHAR2", columnName: "ID"}}}}
+
+// ds.discoverSchemas('PRODUCT', {realtions: true, all: true, views: true}, cb);
