@@ -1,0 +1,63 @@
+{
+  "ids": {
+    "User": 1,
+    "AccessToken": 1,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "Customer": 11,
+    "Order": 11,
+    "Account": 5,
+    "Author": 2,
+    "Book": 3,
+    "Reader": 3
+  },
+  "models": {
+    "User": {},
+    "AccessToken": {},
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "Customer": {
+      "1": "{\"name\":\"Customer A\",\"age\":21,\"accountIds\":[],\"emailList\":[],\"id\":1}",
+      "2": "{\"name\":\"Customer B\",\"age\":22,\"accountIds\":[],\"emailList\":[],\"id\":2}",
+      "3": "{\"name\":\"Customer C\",\"age\":23,\"accountIds\":[],\"emailList\":[],\"id\":3}",
+      "4": "{\"name\":\"Customer D\",\"age\":24,\"accountIds\":[],\"emailList\":[],\"id\":4}",
+      "5": "{\"name\":\"Mary Smith\",\"accountIds\":[1,2],\"emailList\":[],\"id\":5}",
+      "6": "{\"name\":\"John Smith\",\"accountIds\":[],\"emailList\":[],\"id\":6,\"billingAddress\":{\"street\":\"123 A St\",\"city\":\"San Jose\",\"state\":\"CA\",\"zipCode\":\"95131\",\"id\":\"63c623e104121692b550e3ee\"}}",
+      "7": "{\"name\":\"Larry Smith\",\"accountIds\":[],\"emailList\":[{\"label\":\"home\",\"address\":\"larry@yahoo.com\",\"id\":\"c050008a715f03dafb302667\",\"name\":\"home\"}],\"id\":7}",
+      "8": "{\"name\":\"Mary Smith\",\"accountIds\":[3,4],\"emailList\":[],\"id\":8}",
+      "9": "{\"name\":\"John Smith\",\"accountIds\":[],\"emailList\":[],\"id\":9,\"billingAddress\":{\"street\":\"123 A St\",\"city\":\"San Jose\",\"state\":\"CA\",\"zipCode\":\"95131\",\"id\":\"0dfc712584cf73afc7e71a3f\"}}",
+      "10": "{\"name\":\"Larry Smith\",\"accountIds\":[],\"emailList\":[{\"label\":\"home\",\"address\":\"larry@yahoo.com\",\"id\":\"10e541089db3db5cf239077f\",\"name\":\"home\"}],\"id\":10}"
+    },
+    "Order": {
+      "1": "{\"description\":\"First order by Customer A\",\"date\":\"2015-01-01T03:00:00.000Z\",\"customerId\":1,\"id\":1}",
+      "2": "{\"description\":\"Second order by Customer A\",\"date\":\"2015-02-01T03:00:00.000Z\",\"customerId\":1,\"id\":2}",
+      "3": "{\"description\":\"Order by Customer B\",\"date\":\"2015-03-01T03:00:00.000Z\",\"customerId\":2,\"id\":3}",
+      "4": "{\"description\":\"Order by Customer C\",\"date\":\"2015-04-01T03:00:00.000Z\",\"customerId\":3,\"id\":4}",
+      "5": "{\"description\":\"Order by Anonymous\",\"date\":\"2015-05-01T03:00:00.000Z\",\"id\":5}",
+      "6": "{\"description\":\"First order by Customer A\",\"date\":\"2015-01-01T03:00:00.000Z\",\"customerId\":8,\"id\":6}",
+      "7": "{\"description\":\"Second order by Customer A\",\"date\":\"2015-02-01T03:00:00.000Z\",\"customerId\":8,\"id\":7}",
+      "8": "{\"description\":\"Order by Customer B\",\"date\":\"2015-03-01T03:00:00.000Z\",\"customerId\":9,\"id\":8}",
+      "9": "{\"description\":\"Order by Customer C\",\"date\":\"2015-04-01T03:00:00.000Z\",\"customerId\":10,\"id\":9}",
+      "10": "{\"description\":\"Order by Anonymous\",\"date\":\"2015-05-01T03:00:00.000Z\",\"id\":10}"
+    },
+    "Account": {
+      "1": "{\"name\":\"Checking\",\"balance\":5000,\"id\":1}",
+      "2": "{\"name\":\"Saving\",\"balance\":2000,\"id\":2}",
+      "3": "{\"name\":\"Checking\",\"balance\":5000,\"id\":3}",
+      "4": "{\"name\":\"Saving\",\"balance\":2000,\"id\":4}"
+    },
+    "Author": {
+      "1": "{\"name\":\"Author 1\",\"id\":1}"
+    },
+    "Book": {
+      "1": "{\"name\":\"Book 1\",\"links\":[{\"id\":1,\"name\":\"Author 1\",\"notes\":\"Note 1\",\"linkedId\":1,\"linkedType\":\"Author\"},{\"id\":2,\"name\":\"Reader 1\",\"notes\":\"Note 2\",\"linkedId\":1,\"linkedType\":\"Reader\"}],\"id\":1}",
+      "2": "{\"name\":\"Book 1\",\"links\":[{\"id\":1,\"name\":\"Author 1\",\"notes\":\"Note 1\",\"linkedId\":2,\"linkedType\":\"Author\"},{\"id\":2,\"name\":\"Reader 1\",\"notes\":\"Note 2\",\"linkedId\":2,\"linkedType\":\"Reader\"}],\"id\":2}"
+    },
+    "Reader": {
+      "1": "{\"name\":\"Reader 1\",\"id\":1}",
+      "2": "{\"name\":\"Reader 1\",\"id\":2}"
+    }
+  }
+}
