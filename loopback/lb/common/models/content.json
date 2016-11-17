@@ -1,0 +1,25 @@
+{
+  "name": "Content",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "original_title": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "taxonomies": {
+      "type": "hasMany",
+      "model": "Taxonomy",
+      "foreignKey": "",
+      "through": "ContentTaxonomy"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Taxonomy",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "min_childs": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "max_childs": {
+      "type": "number",
+      "required": true,
+      "default": 3
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "contents": {
+      "type": "hasMany",
+      "model": "Content",
+      "foreignKey": "",
+      "through": "ContentTaxonomy"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

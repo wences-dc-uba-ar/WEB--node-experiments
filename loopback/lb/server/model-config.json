@@ -31,5 +31,21 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Content": {
+    "dataSource": "lbMySqlDs",
+    "public": true
+  },
+  "Taxonomy": {
+    "dataSource": "lbMySqlDs",
+    "public": true
+  },
+  "ContentTaxonomy": {
+    "dataSource": "lbMySqlDs",
+    "public": true
+  },
+  "Config": {
+    "dataSource": "lbMySqlDs",
+    "public": true
   }
 }

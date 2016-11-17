@@ -1,0 +1,30 @@
+{
+  "name": "ContentTaxonomy",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "order": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "content": {
+      "type": "belongsTo",
+      "model": "Content",
+      "foreignKey": ""
+    },
+    "taxonomy": {
+      "type": "belongsTo",
+      "model": "Taxonomy",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
