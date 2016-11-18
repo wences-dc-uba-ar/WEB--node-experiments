@@ -2,13 +2,14 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 var bodyParser = require('body-parser');
-var multer  = require('multer');
+var multer = require('multer');
 
 // Create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-//app.use(multer({ dest: '/tmp/'}));
 
 app.use(express.static('public'));
+// app.use(multer({dest:__dirname+'/file/uploads/'}).any());
+app.use(multer({dest:'/tmp/'}).any());
 
 app.get('/', function (req, res) {
    res.send('Hello World');
@@ -41,7 +42,14 @@ app.post('/process_post', urlencodedParser, function (req, res) {
 })
 
 app.post('/file_upload', function (req, res) {
-   console.log(req.files.file.name);
+
+   console.log(req.files);
+
+   res.redirect('/upload.html');
+
+   return 0;
+
+   console.log('files',req.files);
    console.log(req.files.file.path);
    console.log(req.files.file.type);
    var file = __dirname + "/" + req.files.file.name;
