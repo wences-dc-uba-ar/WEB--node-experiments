@@ -7,7 +7,16 @@
 
 module.exports = {
 
+  	autoPK: false,
+
 	attributes: {
+	    id: {
+	      type: 'integer',
+	      unique: true,
+	      primaryKey: true,
+	      columnName: 'ids',
+	      size: 11
+	    },
 		name: {
 			type: 'string',
 			size: 12
