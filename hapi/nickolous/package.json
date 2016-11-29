@@ -1,0 +1,30 @@
+{
+  "name": "hapi-rest-demo",
+  "version": "0.0.0",
+  "description": "A simple REST API demo using hapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:niix/hapi-rest-demo.git"
+  },
+  "author": "Nick Justice",
+  "license": "MIT",
+  "dependencies": {
+    "await": "^0.2.6",
+    "hapi": "^15.2.0",
+    "hapi-sequelize": "^3.0.4",
+    "hapi-sequelize-crud": "^2.9.0",
+    "hapi-sequelize-crud2": "^2.7.4",
+    "joi": "^5.1.0",
+    "sequelize": "^3.27.0",
+    "sqlite3": "^3.0.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-nodemon": "^1.0.5",
+    "sequelize-cli": "^1.0.3"
+  }
+}
