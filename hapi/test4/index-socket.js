@@ -1,3 +1,4 @@
+'use strict';
 var hapi = require('hapi');
 var server = new hapi.Server();
 
@@ -22,11 +23,14 @@ server.register(require('inert'),function(err){
     });
 });
 
+var count = 0;
+
 io.on('connection', function(socket) {
-    
-   socket.emit('news', {hello: 'world'});
-   
-   socket.on('something', function(data) {
-       console.log(data);
+   socket.emit('count', {count: count});
+   socket.on('increase', function(data) {
+       count++;
+       console.log(count);
+       io.sockets.emit('count', {count: count});
    });
 });
+

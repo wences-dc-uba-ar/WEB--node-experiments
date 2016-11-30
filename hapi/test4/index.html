@@ -1,16 +1,20 @@
-<hmtl>
+<html>
     <head>
-        <title>hola socket.io</title>
-    </head>
-    <body>
-        <script src="/socket.io/socket.io.js" />
+        <title>socket.io</title>
+        <div id="count"></div>
+        <button id="clickme" >click me</button>
+        <script src="/socket.io/socket.io.js"></script>
         <script>
             var socket = io('http://localhost:3000');
-            socket.on('news', function(data) {
-                console.log(data);
-                socket.emit('something', { my: 'data'});
+            socket.on('count', function(data) {
+                document.getElementById('count').innerHTML = data.count;
             });
-    
+            document.getElementById('clickme').onclick = function(){
+                socket.emit('increase');
+            };
+            
         </script>
+    </head>
+    <body>
     </body>
-</hmtl>
+</html>

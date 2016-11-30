@@ -4,3 +4,7 @@ var nodemon = require('gulp-nodemon');
 gulp.task('default', function() {
   nodemon({ script : './index.js', ext : 'js' });
 });
+
+gulp.task('crud', function() {
+  nodemon({ script : './index-crud2.js', ext : 'js' });
+});
