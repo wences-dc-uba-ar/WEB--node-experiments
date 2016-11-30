@@ -1,0 +1,16 @@
+<hmtl>
+    <head>
+        <title>hola socket.io</title>
+    </head>
+    <body>
+        <script src="/socket.io/socket.io.js" />
+        <script>
+            var socket = io('http://localhost:3000');
+            socket.on('news', function(data) {
+                console.log(data);
+                socket.emit('something', { my: 'data'});
+            });
+    
+        </script>
+    </body>
+</hmtl>
