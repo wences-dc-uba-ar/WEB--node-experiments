@@ -23,9 +23,9 @@ server.register(require('inert'), function(err) {
 
 		server.route({
 			method: 'GET',
-			path: '/img.jpg',
+			path: '/wind.png',
 			handler: function(request, reply) {
-				reply.file('img.jpg');
+				reply.file('wind.png');
 			}
 		});
 
