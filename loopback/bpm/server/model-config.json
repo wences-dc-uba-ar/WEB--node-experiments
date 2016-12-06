@@ -31,19 +31,5 @@
   "Role": {
     "dataSource": "db",
     "public": false
-  },
-  "Content": {
-    "dataSource": "bpm",
-    "public": true
-  },
-  "Taxonomy": {
-    "dataSource": "bpm",
-    "public": true,
-    "$promise": {},
-    "$resolved": true
-  },
-  "ContentTaxonomy": {
-    "dataSource": "bpm",
-    "public": true
   }
 }
