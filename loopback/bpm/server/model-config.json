@@ -31,5 +31,21 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "AvcmsConfig": {
+    "dataSource": "bpm",
+    "public": true
+  },
+  "Content": {
+    "dataSource": "bpm",
+    "public": true
+  },
+  "ContentTaxonomy": {
+    "dataSource": "bpm",
+    "public": true
+  },
+  "Taxonomy": {
+    "dataSource": "bpm",
+    "public": true
   }
 }
