@@ -1,6 +1,6 @@
 "use strict"
 
-var express   = require('express')
+var express  = require('express')
  , Sequelize = require('sequelize')
  , http      = require('http')
  , restful   = require('sequelize-restful')
@@ -9,11 +9,10 @@ var express   = require('express')
 
 // define all your models before the configure block
 
-app.configure(function() {
-  app.use(restful(sequelize, { }))
-});
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'))
+app.use(restful(sequelize, { }))
+
+app.listen(8888, function(){
+  console.log("Express server listening on port 8888");
 });
 
