@@ -23,6 +23,7 @@ fs
     if (file.slice(-3) !== '.js') return;
     var model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
+    console.log('imported model ' + file);
   });
 
 Object.keys(db).forEach(function(modelName) {
