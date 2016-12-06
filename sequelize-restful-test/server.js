@@ -8,7 +8,10 @@ var express  = require('express')
  , app       = express();
 
 // define all your models before the configure block
-
+var Project = sequelize.define('project', {
+  title: Sequelize.STRING,
+  description: Sequelize.TEXT
+})
 
 app.use(restful(sequelize, { }))
 
