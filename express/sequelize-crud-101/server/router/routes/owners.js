@@ -6,11 +6,7 @@ module.exports = (app, db) => {
   app.get('/owners', (req, res) => {
     db.owners.findAll()
       .then(owners => {
-        res.json({
-          message: 'loaded data',
-          success: true,
-          data: owners
-        });
+        res.json(owners);
       });
   });
 
