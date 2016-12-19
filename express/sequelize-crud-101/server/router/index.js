@@ -1,6 +1,7 @@
 'use strict'
 
 const routes = [
+  require('./routes/metadata'),
   require('./routes/owners'),
   require('./routes/pets')
 ];

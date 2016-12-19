@@ -4,9 +4,16 @@ module.exports = (app, db) => {
 
   // GET all owners
   app.get('/owners', (req, res) => {
-    db.owners.findAll()
-      .then(owners => {
-        res.json(owners);
+    let offset = parseInt(req.query.start) || 0;
+    let limit = parseInt(req.query.limit) || 5;
+    
+    db.owners.findAndCountAll({offset: offset, limit: limit})
+      .then(result => {
+        result.success = true;
+        result.offset = offset;
+        result.limit = limit;
+        result.message = `take ${result.rows.length} rows, skipping ${offset}, from a total of ${result.count}`;
+        res.json(result);
       });
   });
 

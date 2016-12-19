@@ -36,7 +36,7 @@ db.sequelize.sync({force: true, match: /^test$/ }).then(() => {
     console.log('Express listening on port: http://localhost:'+PORT+'/');
 
 
-    db.owners.create({  
+    db.owners.create({
       name: 'Loren',
       role: 'admin'
     })
@@ -86,6 +86,8 @@ db.sequelize.sync({force: true, match: /^test$/ }).then(() => {
       });
     });
 
-
+    for (var i = 1 ; i < 35; i++) {
+      db.owners.create({name: 'Loren'+i,role: 'admin'})
+    }
   });
 });
