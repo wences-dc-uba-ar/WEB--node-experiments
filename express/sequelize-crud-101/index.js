@@ -31,7 +31,7 @@ app._router.stack.forEach(route => {
 });
 
 //drop and resync with { force: true }
-db.sequelize.sync({force: true, match: /^test$/ }).then(() => {
+db.sequelize.sync({force: false, match: /^bpm$/ }).then(() => {
   app.listen(PORT, () => {
     console.log('Express listening on port: http://localhost:'+PORT+'/');
 

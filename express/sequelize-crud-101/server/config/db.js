@@ -2,6 +2,7 @@
 
 const Sequelize = require('sequelize');
 const env = require('./env');
+const models = require('../models');
 const sequelize = new Sequelize(env.DATABASE_NAME, env.DATABASE_USERNAME, env.DATABASE_PASSWORD, {
   host: env.DATABASE_HOST,
   port: env.DATABASE_PORT,
@@ -21,11 +22,13 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 //Models/tables
-db.owners = require('../models/owners.js')(sequelize, Sequelize);
-db.pets = require('../models/pets.js')(sequelize, Sequelize);
+Object.keys(models).forEach(function(key) {
+    let model = models[key];
+    db[key] = model(sequelize, Sequelize);
+});
 
 //Relations
-db.pets.belongsTo(db.owners);
-db.owners.hasMany(db.pets);
+// db.pets.belongsTo(db.owners);
+// db.owners.hasMany(db.pets);
 
 module.exports = db;
