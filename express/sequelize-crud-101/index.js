@@ -12,6 +12,7 @@ const PORT = env.PORT;
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.set('json spaces', 4);
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -21,14 +22,6 @@ app.use((req, res, next) => {
 });
 
 router(app, db);
-
-app._router.stack.forEach(route => {
-  if(route.route) {
-    Object.keys(route.route.methods).forEach( method => {
-      console.log(method+'    http://localhost:'+PORT+route.route.path);
-    });
-  }
-});
 
 //drop and resync with { force: true }
 db.sequelize.sync({force: false, match: /^bpm$/ }).then(() => {
