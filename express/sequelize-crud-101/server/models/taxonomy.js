@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('pet', {
+  return sequelize.define('taxonomy', {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -10,11 +10,22 @@ module.exports = function(sequelize, DataTypes) {
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
-    type: {
-      type: DataTypes.ENUM('dog','cat','minx'),
-      allowNull: true
+    min_childs: {
+      type: DataTypes.INTEGER(11),
+      allowNull: false,
+      defaultValue: "0"
+    },
+    max_childs: {
+      type: DataTypes.INTEGER(11),
+      allowNull: false,
+      defaultValue: "5"
+    },
+    enabled: {
+      type: DataTypes.INTEGER(1),
+      allowNull: false,
+      defaultValue: "1"
     },
     created_at: {
       type: DataTypes.DATE,
@@ -25,6 +36,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-    tableName: 'pet'
+    tableName: 'taxonomy'
   });
 };

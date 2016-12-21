@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('db_device', {
+  return sequelize.define('device', {
     nombre: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -27,8 +27,16 @@ module.exports = function(sequelize, DataTypes) {
     distingue_hd: {
       type: DataTypes.INTEGER(1),
       allowNull: true
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false
     }
   }, {
-    tableName: 'db_device'
+    tableName: 'device'
   });
 };

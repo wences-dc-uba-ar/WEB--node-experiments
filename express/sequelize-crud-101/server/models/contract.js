@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('catalogo', {
+  return sequelize.define('contract', {
     idCatalogo: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -12,16 +12,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
-        model: 'proveedor',
+        model: 'provider',
         key: 'idProveedor'
-      }
-    },
-    idUsuario: {
-      type: DataTypes.INTEGER(11),
-      allowNull: false,
-      references: {
-        model: 'usuario',
-        key: 'idUsuario'
       }
     },
     codigo: {
@@ -48,8 +40,16 @@ module.exports = function(sequelize, DataTypes) {
     oculto: {
       type: DataTypes.INTEGER(1),
       allowNull: false
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false
     }
   }, {
-    tableName: 'catalogo'
+    tableName: 'contract'
   });
 };

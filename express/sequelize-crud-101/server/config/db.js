@@ -8,6 +8,7 @@ const sequelize = new Sequelize(env.DATABASE_NAME, env.DATABASE_USERNAME, env.DA
   port: env.DATABASE_PORT,
   dialect: env.DATABASE_DIALECT,
   define: {
+    timestamps: true,
     // paranoid: true,
     freezeTableName: true,
     underscored: true

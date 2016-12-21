@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('db_lists', {
+  return sequelize.define('list', {
     id: {
       type: DataTypes.INTEGER(2),
       allowNull: false,
@@ -24,8 +24,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: "Todos"
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false
     }
   }, {
-    tableName: 'db_lists'
+    tableName: 'list'
   });
 };

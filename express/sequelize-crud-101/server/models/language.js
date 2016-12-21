@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('idioma', {
+  return sequelize.define('language', {
     idIdioma: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -19,8 +19,16 @@ module.exports = function(sequelize, DataTypes) {
     ISO639_2: {
       type: DataTypes.STRING,
       allowNull: true
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false
     }
   }, {
-    tableName: 'idioma'
+    tableName: 'language'
   });
 };

@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('db_product', {
+  return sequelize.define('product', {
     order_id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -53,8 +53,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: ""
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false
     }
   }, {
-    tableName: 'db_product'
+    tableName: 'product'
   });
 };

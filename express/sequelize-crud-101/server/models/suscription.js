@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('db_susc', {
+  return sequelize.define('suscription', {
     id: {
       type: DataTypes.INTEGER(3),
       allowNull: false,
@@ -27,8 +27,16 @@ module.exports = function(sequelize, DataTypes) {
     operadores: {
       type: DataTypes.STRING,
       allowNull: true
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false
     }
   }, {
-    tableName: 'db_susc'
+    tableName: 'suscription'
   });
 };

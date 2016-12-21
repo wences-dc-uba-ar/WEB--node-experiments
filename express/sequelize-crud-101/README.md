@@ -12,7 +12,8 @@ To get started:
  ver:  http://lorenstewart.me/2016/10/16/sequelize-crud-102/
  
 # https://github.com/sequelize/sequelize-auto
+npm install -g sequelize-auto
+npm install -g mysql
 sequelize-auto -h localhost -d bpm -u bpm -x bpm -p 3306 --dialect mysql -o server/models/ 
-
 
 node --inspect --debug-brk index.js

@@ -35,15 +35,15 @@ db.sequelize.sync({force: false, match: /^bpm$/ }).then(() => {
   app.listen(PORT, () => {
     console.log('Express listening on port: http://localhost:'+PORT+'/');
 
-
-    db.owners.create({
+    /*
+    db.owner.create({
       name: 'Loren',
       role: 'admin'
     })
     .then(newOwner => {
       console.log(`New owner ${newOwner.name}, with id ${newOwner.id} has been created.`);
 
-      db.pets.create({  
+      db.pet.create({  
         name: 'Max',
         owner_id: newOwner.id,
         type: 'cat'
@@ -52,21 +52,21 @@ db.sequelize.sync({force: false, match: /^bpm$/ }).then(() => {
       .then(newPet => {
         console.log(`New ${newPet.type} ${newPet.name}, with id ${newPet.id} has been created.`);
 
-        db.owners.findOne({  
+        db.owner.findOne({  
           name: 'Loren'
         })
         .then(owner => {
           console.log(`Found owner: ${owner}`);
         });
 
-        db.owners.findAll({  
+        db.owner.findAll({  
           role: 'admin'
         })
         .then(admins => {
           console.log(`Found ${admins.length} matching records.`);
         });
 
-        db.pets.findOne({  
+        db.pet.findOne({  
           name: 'Max'
         })
         .then(pet => {
@@ -74,7 +74,7 @@ db.sequelize.sync({force: false, match: /^bpm$/ }).then(() => {
             name: 'Maxy-boi-boi'
           })
           .then(e => {
-            db.pets.destroy({  
+            db.pet.destroy({  
               where: {name: 'Max'}
             })
             .then(deletedPet => {
@@ -87,7 +87,8 @@ db.sequelize.sync({force: false, match: /^bpm$/ }).then(() => {
     });
 
     for (var i = 1 ; i < 35; i++) {
-      db.owners.create({name: 'Loren'+i,role: 'admin'})
+      db.owner.create({name: 'Loren'+i,role: 'admin'})
     }
+    */
   });
 });

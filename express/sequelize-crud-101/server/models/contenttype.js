@@ -1,27 +1,26 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('avcms_config', {
+  return sequelize.define('contenttype', {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    entity: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    config: {
-      type: DataTypes.STRING,
+    created_at: {
+      type: DataTypes.DATE,
       allowNull: false
     },
-    enabled: {
-      type: DataTypes.INTEGER(1),
-      allowNull: false,
-      defaultValue: "1"
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false
     }
   }, {
-    tableName: 'avcms_config'
+    tableName: 'contenttype'
   });
 };

@@ -1,19 +1,31 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('owner', {
+  return sequelize.define('country', {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
+    country_code: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    lang_code: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    locale: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    role: {
-      type: DataTypes.ENUM('user','admin','disabled'),
+    language_name: {
+      type: DataTypes.STRING,
       allowNull: true
     },
     created_at: {
@@ -23,12 +35,8 @@ module.exports = function(sequelize, DataTypes) {
     updated_at: {
       type: DataTypes.DATE,
       allowNull: false
-    },
-    deleted_at: {
-      type: DataTypes.DATE,
-      allowNull: true
     }
   }, {
-    tableName: 'owner'
+    tableName: 'country'
   });
 };

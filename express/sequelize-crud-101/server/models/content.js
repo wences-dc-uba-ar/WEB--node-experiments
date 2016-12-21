@@ -20,6 +20,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    Subgeneros: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     Titulo_Internacional: {
       type: DataTypes.STRING,
       allowNull: false
@@ -48,6 +52,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    Texto_Banner: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     Pais: {
       type: DataTypes.STRING,
       allowNull: false
@@ -69,6 +77,10 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     Ranking: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    Distintivo: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -97,17 +109,25 @@ module.exports = function(sequelize, DataTypes) {
     created: {
       type: DataTypes.TIME,
       allowNull: false,
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+      defaultValue: "0000-00-00 00:00:00"
     },
     env: {
       type: DataTypes.ENUM('DRAFT','PROD','PREPROD','DELETED'),
       allowNull: false,
       defaultValue: "DRAFT"
     },
-    content_type_id: {
+    contenttype_id: {
       type: DataTypes.INTEGER(10),
       allowNull: false,
       defaultValue: "1"
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false
     }
   }, {
     tableName: 'content'
