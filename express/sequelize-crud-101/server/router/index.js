@@ -1,10 +1,21 @@
 'use strict'
 
-const routes = [
-  require('./routes/metadata'),
-  require('./routes/owners'),
-  require('./routes/pets')
-];
+var fs = require('fs');
+
+var dir = __dirname + '/routes';
+var routes = [];
+console.log(dir);
+
+var files = fs.readdirSync(dir);
+for (var i in files) {
+	let name = files[i].split('.');
+	if(name.pop() === 'js') {
+		var fullPath = dir + '/' + files[i];
+	    if (fs.statSync(fullPath).isFile()){
+	        routes.push(require(fullPath));
+	    }
+	}
+}
 
 // route / index of all routes
 routes.push(
