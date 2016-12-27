@@ -10,11 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     idProveedor: {
       type: DataTypes.INTEGER(11),
-      allowNull: false,
-      references: {
-        model: 'provider',
-        key: 'idProveedor'
-      }
+      allowNull: false
     },
     codigo: {
       type: DataTypes.STRING,

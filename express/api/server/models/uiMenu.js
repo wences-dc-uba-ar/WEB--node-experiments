@@ -1,12 +1,21 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('taxonomy', {
+  return sequelize.define('uiMenu', {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
+    },
+    parent: {
+      type: DataTypes.INTEGER(11),
+      allowNull: true
+    },
+    order: {
+      type: DataTypes.INTEGER(11),
+      allowNull: false,
+      defaultValue: "0"
     },
     name: {
       type: DataTypes.STRING,
@@ -17,15 +26,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: "1"
     },
-    created_at: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-    updated_at: {
-      type: DataTypes.DATE,
+    data: {
+      type: DataTypes.TEXT,
       allowNull: false
     }
   }, {
-    tableName: 'taxonomy'
+    tableName: 'uiMenu'
   });
 };
