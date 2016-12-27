@@ -1,22 +1,26 @@
 'use strict';
 
+const env = require('../../config/env');
+
 module.exports = (app, db) => {
 
-  // GET all owners
-  app.get('/owners', (req, res) => {
+  // GET rows
+  app.get('/api/:model', (req, res) => {
     let offset = parseInt(req.query.start) || 0;
-    let limit = parseInt(req.query.limit) || 5;
+    let limit = parseInt(req.query.limit) || 10;
     
-    db.owners.findAndCountAll({offset: offset, limit: limit})
+    db[req.params.model].findAndCountAll({offset: offset, limit: limit})
       .then(result => {
         result.success = true;
         result.offset = offset;
         result.limit = limit;
-        result.message = `take ${result.rows.length} rows, skipping ${offset}, from a total of ${result.count}`;
+        result.message = `take ${result.rows.length} ${req.params.model} rows, skipping ${offset}, from a total of ${result.count}`;
         res.json(result);
       });
+    
   });
 
+/*
   // GET one owner by id
   app.get('/owner/:id', (req, res) => {
     const id = req.params.id;
@@ -66,4 +70,6 @@ module.exports = (app, db) => {
         res.json(deletedOwner);
       });
   });
+  */
+
 };

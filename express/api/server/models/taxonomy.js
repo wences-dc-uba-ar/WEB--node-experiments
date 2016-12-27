@@ -12,16 +12,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    min_childs: {
-      type: DataTypes.INTEGER(11),
-      allowNull: false,
-      defaultValue: "0"
-    },
-    max_childs: {
-      type: DataTypes.INTEGER(11),
-      allowNull: false,
-      defaultValue: "5"
-    },
+    // min_childs: {
+    //   type: DataTypes.INTEGER(11),
+    //   allowNull: false,
+    //   defaultValue: "0"
+    // },
+    // max_childs: {
+    //   type: DataTypes.INTEGER(11),
+    //   allowNull: false,
+    //   defaultValue: "5"
+    // },
     enabled: {
       type: DataTypes.INTEGER(1),
       allowNull: false,
