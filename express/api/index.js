@@ -5,7 +5,8 @@ const express = require('express'),
   morgan = require('morgan'),
   db = require('./server/config/db.js'),
   env = require('./server/config/env'),
-  router = require('./server/router/index');
+  router = require('./server/router/index'),
+  path = require('path');
 
 const app = express();
 const PORT = env.PORT;
@@ -13,6 +14,8 @@ const PORT = env.PORT;
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.set('json spaces', 4);
+
+app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");

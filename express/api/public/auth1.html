@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The HTML5 Herald</title>
+		<meta name="description" content="The HTML5 Herald">
+		<meta name="author" content="SitePoint">
+		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
+		<meta name="google-signin-client_id" content="627696795827-nama3n5f5g0agv0sobum11am5qr2ric8.apps.googleusercontent.com">
+		<script>
+			window.onLoadCallback = function(){
+				gapi.auth2.init({
+					client_id: '627696795827-nama3n5f5g0agv0sobum11am5qr2ric8.apps.googleusercontent.com'
+				});
+				console.log(gapi);
+				var auth2 = gapi.auth2.getAuthInstance();
+				if (auth2.isSignedIn.get()) {
+					var profile = auth2.currentUser.get().getBasicProfile();
+					console.log('ID: ' + profile.getId());
+					console.log('Full Name: ' + profile.getName());
+					console.log('Given Name: ' + profile.getGivenName());
+					console.log('Family Name: ' + profile.getFamilyName());
+					console.log('Image URL: ' + profile.getImageUrl());
+					console.log('Email: ' + profile.getEmail());
+				} else {
+					console.log('not signed in');
+				}
+				auth2.isSignedIn.listen(signinChanged);
+				auth2.currentUser.listen(userChanged);
+				if (auth2.isSignedIn.get() == true) {
+					auth2.signIn();
+				}
+			}
+
+			function onSignIn(googleUser) {
+				var profile = googleUser.getBasicProfile();
+				console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+				console.log('Name: ' + profile.getName());
+				console.log('Image URL: ' + profile.getImageUrl());
+				console.log('Email: ' + profile.getEmail());
+			}
+		</script>
+	</head>
+	<body>
+		<div class="g-signin2" data-onsuccess="onSignIn"></div>
+		<hr/>
+		<a href="#" onclick="signOut();">Sign out</a>
+		<script>
+			function signOut() {
+				var auth2 = gapi.auth2.getAuthInstance();
+				auth2.signOut().then(function () {
+				console.log('User signed out.');
+				});
+			}
+		</script>
+	</body>
+</html>

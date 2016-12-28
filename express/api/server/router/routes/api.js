@@ -8,8 +8,32 @@ module.exports = (app, db) => {
   app.get('/api/:model', (req, res) => {
     let offset = parseInt(req.query.start) || 0;
     let limit = parseInt(req.query.limit) || 10;
-    
-    db[req.params.model].findAndCountAll({offset: offset, limit: limit})
+    let options = {
+      offset: offset,
+      limit: limit
+    };
+    if(req.query.fields) {
+      options.attributes = req.query.fields.split(',');
+    }
+    let sort, length;
+    if(req.query.sort && (sort=JSON.parse(req.query.sort)) && (length = sort.length)) {
+      options.order = [];
+      for(var i=0;i<length;i++) {
+        options.order.push([sort[i].property, sort[i].direction]);
+      }
+    }
+
+    let filter;
+    if(req.query.filter && (filter=JSON.parse(req.query.filter)) && (length = filter.length)) {
+      // [{"operator":"like","value":"4","property":"id"},{"operator":"like","value":"ee","property":"Titulo_Internacional"}]
+      options.where = {};
+      for(var i=0;i<length;i++) {
+        options.where[filter[i].property] = {$like: '%'+filter[i].value+'%'};
+      }
+    }
+    console.log(options);
+
+    db[req.params.model].findAndCountAll(options)
       .then(result => {
         result.success = true;
         result.offset = offset;
@@ -20,18 +44,18 @@ module.exports = (app, db) => {
     
   });
 
-/*
-  // GET one owner by id
-  app.get('/owner/:id', (req, res) => {
+  app.get('/api/:model/:id', (req, res) => {
+    const model = req.params.model;
     const id = req.params.id;
-    db.owners.find({
+    db[req.params.model].find({
       where: { id: id}
     })
-      .then(owner => {
-        res.json(owner);
+      .then(model => {
+        res.json(model);
       });
   });
 
+/*
   // POST single owner
   app.post('/owner', (req, res) => {
     const name = req.body.name;
