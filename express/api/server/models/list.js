@@ -8,15 +8,15 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "0",
       primaryKey: true
     },
-    nombre: {
+    name: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    descripcion: {
+    description: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    operadores: {
+    operators: {
       type: DataTypes.STRING,
       allowNull: true
     },

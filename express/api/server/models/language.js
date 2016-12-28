@@ -2,13 +2,13 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('language', {
-    idIdioma: {
+    id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    nombre: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },

@@ -8,15 +8,15 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "0",
       primaryKey: true
     },
-    nombre: {
+    name: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    descripcion: {
+    description: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    precio: {
+    price: {
       type: DataTypes.INTEGER(2),
       allowNull: true
     },
@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER(1),
       allowNull: true
     },
-    operadores: {
+    operators: {
       type: DataTypes.STRING,
       allowNull: true
     },

@@ -1,35 +1,31 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('provider', {
+  return sequelize.define('db_country', {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
+    country_code: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    lang_code: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    locale: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    address: {
+    language_name: {
       type: DataTypes.STRING,
-      allowNull: true
-    },
-    phone: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    web: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    notes: {
-      type: DataTypes.TEXT,
       allowNull: true
     },
     created_at: {
@@ -41,6 +37,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-    tableName: 'provider'
+    tableName: 'db_country'
   });
 };

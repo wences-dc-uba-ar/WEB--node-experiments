@@ -2,25 +2,25 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('contract', {
-    idCatalogo: {
+    id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    idProveedor: {
+    provider_id: {
       type: DataTypes.INTEGER(11),
       allowNull: false
     },
-    codigo: {
+    code: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    fecha: {
+    stat_date: {
       type: DataTypes.DATE,
       allowNull: true
     },
-    fecha_fin: {
+    end_date: {
       type: DataTypes.DATE,
       allowNull: false
     },
@@ -29,11 +29,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: "Todos"
     },
-    comentario: {
+    comment: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    oculto: {
+    hidden: {
       type: DataTypes.INTEGER(1),
       allowNull: false
     },

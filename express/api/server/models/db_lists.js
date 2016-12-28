@@ -1,36 +1,29 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('provider', {
+  return sequelize.define('db_lists', {
     id: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.INTEGER(2),
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      defaultValue: "0",
+      primaryKey: true
     },
-    name: {
+    nombre: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    address: {
+    descripcion: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    phone: {
+    operadores: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    email: {
+    devices: {
       type: DataTypes.STRING,
-      allowNull: true
-    },
-    web: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    notes: {
-      type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: false,
+      defaultValue: "Todos"
     },
     created_at: {
       type: DataTypes.DATE,
@@ -41,6 +34,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-    tableName: 'provider'
+    tableName: 'db_lists'
   });
 };

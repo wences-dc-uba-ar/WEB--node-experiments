@@ -13,3 +13,16 @@ esto funciono bien:
 	https://github.com/google/google-api-nodejs-client/blob/master/samples/oauth2.js
 	ver:
 		https://github.com/google/google-api-nodejs-client#oauth2-client
+
+
+
+
+
+
+# https://github.com/sequelize/sequelize-auto
+npm install -g sequelize-auto
+npm install -g mysql
+sequelize-auto -h localhost -d bpm -u bpm -x bpm -p 3306 --dialect mysql -o server/models/ 
+
+# DEBUG
+node --inspect --debug-brk index.js

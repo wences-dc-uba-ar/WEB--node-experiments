@@ -1,36 +1,58 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('provider', {
-    id: {
+  return sequelize.define('db_product', {
+    order_id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
+    lista: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    address: {
+    operador: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    phone: {
+    dispositivo: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    email: {
+    habilitado: {
+      type: DataTypes.INTEGER(1),
+      allowNull: false,
+      defaultValue: "1"
+    },
+    susc_1_SD: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    web: {
+    susc_1_HD: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    notes: {
-      type: DataTypes.TEXT,
+    susc_2_SD: {
+      type: DataTypes.STRING,
       allowNull: true
+    },
+    susc_2_HD: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    susc_3_SD: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    susc_3_HD: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    descripcion: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: ""
     },
     created_at: {
       type: DataTypes.DATE,
@@ -41,6 +63,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-    tableName: 'provider'
+    tableName: 'db_product'
   });
 };

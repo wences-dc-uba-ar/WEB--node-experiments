@@ -2,30 +2,22 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('device', {
-    nombre: {
-      type: DataTypes.STRING,
+    id: {
+      type: DataTypes.INTEGER(11),
       allowNull: false,
-      defaultValue: "",
       primaryKey: true
     },
-    descripcion: {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: ""
+    },
+    description: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    operadores: {
+    operators: {
       type: DataTypes.STRING,
-      allowNull: true
-    },
-    grupo: {
-      type: DataTypes.INTEGER(1),
-      allowNull: true
-    },
-    peso: {
-      type: DataTypes.INTEGER(2),
-      allowNull: true
-    },
-    distingue_hd: {
-      type: DataTypes.INTEGER(1),
       allowNull: true
     },
     created_at: {

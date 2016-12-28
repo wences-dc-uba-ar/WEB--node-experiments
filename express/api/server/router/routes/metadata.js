@@ -2,6 +2,10 @@
 
 const env = require('../../config/env');
 
+var toTitleCase = function(str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
 module.exports = (app, db) => {
 
   app.get('/metadata/:table', (req, res) => {
@@ -52,12 +56,16 @@ module.exports = (app, db) => {
     }
     db.sequelize.query(query,{replacements: {parent: req.params.parent}, type: db.sequelize.QueryTypes.SELECT})
     .then(result => {
-        res.json({
-          success: true,
-          message: `menu for ` + req.params.parent,
-          count: result.length,
-          // rows: result.map(row => row.TABLE_NAME)
-          rows: Object.keys(result).reduce(function(previous, key) {
+
+        // Tablas
+        // db.sequelize.query(`SELECT TABLE_NAME AS name,TABLE_TYPE,TABLE_ROWS FROM information_schema.TABLES WHERE TABLE_SCHEMA = :database`,
+        db.sequelize.query(`SELECT TABLE_NAME AS name FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = :database AND COLUMN_NAME = 'id'`,
+          {replacements: {database: env.DATABASE_NAME}, type: db.sequelize.QueryTypes.SELECT})
+        .then(tablesResult => {
+
+          // console.log(result);
+
+          let rows = Object.keys(result).reduce(function(previous, key) {
             previous[key] = result[key];
             previous[key].text = result[key].name;
             try {
@@ -67,8 +75,43 @@ module.exports = (app, db) => {
               previous[key].data = {};
             }
             return previous;
-          }, [])
+          }, []);
+
+          // console.log(tablesResult);
+
+          if(req.params.parent == 'root') {
+            let tables = Object.keys(tablesResult).reduce(function(previous,key) {
+              previous[key] = tablesResult[key];
+              previous[key].text = toTitleCase(tablesResult[key].name.split('_').join(' '));
+              previous[key].enabled = 1;
+              previous[key].id = 1000 + parseInt(key);
+              previous[key].parent = null;
+              previous[key].order = 999;
+              previous[key].data = {type: 'list', table: tablesResult[key].name};
+              previous[key].created_at = new Date();
+              previous[key].updated_at = new Date();
+
+              return previous;
+            }, []);
+            // console.log(tables);
+            rows = rows.concat(tables);
+          }
+
+          // console.log(rows);
+
+          res.json({
+            success: true,
+            message: `menu for ` + req.params.parent,
+            count: result.length + tablesResult.length,
+            // rows: result.map(row => row.TABLE_NAME)
+            rows: rows
+          });
+
+          
         });
+
+
+
       });
   });
 

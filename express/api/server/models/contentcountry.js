@@ -1,57 +1,52 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('product', {
-    id: {
-      type: DataTypes.INTEGER(11),
+  return sequelize.define('contentcountry', {
+    uuid: {
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true
     },
-    lista: {
+    Titulo_Qubit: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    operador: {
+    Texto_Breve: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    Texto_Largo: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    idioma_x_defecto: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    dispositivo: {
+    Clasificación: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    habilitado: {
-      type: DataTypes.INTEGER(1),
-      allowNull: false,
-      defaultValue: "1"
-    },
-    susc_1_SD: {
+    Habilitado_Comercialmente: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    susc_1_HD: {
+    Disponible_Desde: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    susc_2_SD: {
+    Disponible_Hasta: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    susc_2_HD: {
+    TTL: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    susc_3_SD: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    susc_3_HD: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    descripcion: {
+    country: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: ""
+      primaryKey: true
     },
     created_at: {
       type: DataTypes.DATE,
@@ -62,6 +57,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-    tableName: 'product'
+    tableName: 'contentcountry'
   });
 };
