@@ -20,3 +20,6 @@ http://lorenstewart.me/2016/10/03/sequelize-crud-101/
 
 ##
 https://sbalagop.wordpress.com/2015/04/21/developing-restful-apis-using-node-js-express-and-oracle-neo/
+
+# Building a Microblog Using Node.js, Git and Markdown
+https://www.sitepoint.com/build-microblog-node-js-git-markdown/
