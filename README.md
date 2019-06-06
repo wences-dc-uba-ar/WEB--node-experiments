@@ -2,8 +2,7 @@
 experimentos con nodej
 
 
+- http://stackoverflow.com/questions/25801426/sequelize-rest-api-generators
 
-http://stackoverflow.com/questions/25801426/sequelize-rest-api-generators
-
-https://devdactic.com/rapid-development-with-sailsjs/
+- https://devdactic.com/rapid-development-with-sailsjs/
 
