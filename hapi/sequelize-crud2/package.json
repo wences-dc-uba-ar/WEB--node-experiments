@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "babel": "^6.5.2",
-    "hapi": "^15.2.0",
+    "hapi": "^18.1.0",
     "hapi-sequelize": "^3.0.4",
     "hapi-sequelize-crud2": "^2.7.4",
     "mysql": "^2.12.0",
