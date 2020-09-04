@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "await": "^0.2.6",
-    "hapi": "^15.2.0",
+    "hapi": "^18.1.0",
     "hapi-sequelize": "^3.0.4",
     "hapi-sequelize-crud": "^2.9.0",
     "hapi-sequelize-crud2": "^2.7.4",
